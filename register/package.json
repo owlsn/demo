@@ -1,0 +1,9 @@
+{
+  "name": "register",
+  "version": "1.0.0",
+  "description": "register module",
+  "main": "index.js",
+  "repository": "https://github.com/owlsn/demo/register",
+  "author": "owlsn",
+  "license": "MIT"
+}
