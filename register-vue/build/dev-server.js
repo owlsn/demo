@@ -1,7 +1,10 @@
 var config = require('../config')
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 var path = require('path')
-var express = require('express')
+const Koa = require('koa')
+const koa_static = require('koa-static')
+
+// var express = require('express')
 var webpack = require('webpack')
 var opn = require('opn')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -12,10 +15,11 @@ var port = process.env.PORT || config.dev.port
     // Define HTTP proxies to your custom API backend
     // https://github.com/chimurai/http-proxy-middleware
 
-var server = express()
+// const server = express();
+const server = new Koa();
 var compiler = webpack(webpackConfig)
 
-var devMiddleware = require('webpack-dev-middleware')(compiler, {
+var devMiddleware = require('koa-webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
     stats: {
         colors: true,
@@ -23,7 +27,7 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
     }
 })
 
-var hotMiddleware = require('webpack-hot-middleware')(compiler)
+var hotMiddleware = require('koa-webpack-hot-middleware')(compiler)
     // force page reload when html-webpack-plugin template changes
 compiler.plugin('compilation', function(compilation) {
     compilation.plugin('html-webpack-plugin-after-emit', function(data, cb) {
@@ -38,7 +42,7 @@ var context = config.dev.context
 
 switch(process.env.NODE_ENV){
     case 'local': var proxypath = 'http://localhost:8001'; break;
-    case 'online': var proxypath = 'http://elm.cangdu.org'; break;
+    // case 'online': var proxypath = 'http://elm.cangdu.org'; break;
     default:  var proxypath = config.dev.proxypath;
 }
 var options = {
@@ -50,7 +54,8 @@ if (context.length) {
 }
 
 // handle fallback for HTML5 history API
-server.use(require('connect-history-api-fallback')())
+// server.use(require('connect-history-api-fallback')())
+server.use(require('koa-connect-history-api-fallback')())
 
 // serve webpack bundle output
 server.use(devMiddleware)
@@ -61,7 +66,8 @@ server.use(hotMiddleware)
 
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
-server.use(staticPath, express.static('./static'))
+server.use(koa_static(staticPath))
+// server.use(express.static(staticPath))
 
 module.exports = server.listen(port, function(err) {
     if (err) {
