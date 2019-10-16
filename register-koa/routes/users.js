@@ -1,4 +1,6 @@
 const router = require('koa-router')();
+const fs = require('fs');
+const path = require('path');
 
 router.prefix('/users');
 
@@ -18,6 +20,11 @@ router.post('/sign', async (ctx, next) => {
     else{
         
     }
+});
+
+router.get('/get_json', async (ctx, next) => {
+    ctx.response.type = 'application/json';
+    ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/list.json'));
 });
 
 module.exports = router;
