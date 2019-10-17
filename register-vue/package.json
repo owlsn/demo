@@ -15,15 +15,14 @@
     "local": "cross-env NODE_ENV=local node build/dev-server.js"
   },
   "dependencies": {
-    "cross-env": "^6.0.3",
+    "axios": "^0.19.0",
     "koa": "^2.10.0",
     "koa-connect-history-api-fallback": "^0.3.1",
     "koa-static": "^5.0.0",
     "koa-webpack-dev-middleware": "^2.0.2",
     "koa-webpack-hot-middleware": "^1.0.3",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "webpack-hot-middleware": "^2.25.0"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -27,4 +27,9 @@ router.get('/get_json', async (ctx, next) => {
     ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/list.json'));
 });
 
+router.post('/list', async (ctx, next) => {
+    ctx.response.type = 'application/json';
+    ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/list.json'));
+});
+
 module.exports = router;
