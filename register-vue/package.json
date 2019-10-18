@@ -18,6 +18,7 @@
     "axios": "^0.19.0",
     "koa": "^2.10.0",
     "koa-connect-history-api-fallback": "^0.3.1",
+    "koa-server-http-proxy": "^0.1.0",
     "koa-static": "^5.0.0",
     "koa-webpack-dev-middleware": "^2.0.2",
     "koa-webpack-hot-middleware": "^1.0.3",

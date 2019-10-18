@@ -1,5 +1,6 @@
 <template>
   <div class="SignupContainer">
+
     <head head-title="注册" goBack="true"></head>
     <form class="SignupForm">
       <section class="input_container phone_number">
@@ -27,12 +28,14 @@
         </div>
       </section> -->
     </form>
-    <div class="signup" @click="signup">确认修改</div>
+    <div>
+      <button class="signup" @click="signup">确认修改</button>
+    </div>
   </div>
 </template>
 
 <script>
-import { getList, getJson } from '../service/getData'
+import { getList, getJson, signData } from '../service/data'
 export default {
   name: 'Signup',
   data() {
@@ -53,8 +56,21 @@ export default {
       let res = await getJson(data)
       console.log(res)
     },
-    signup() {
-      console.log('signup')
+    async signup() {
+      var data = {
+        phone: this.phone,
+        password: this.password,
+        rePassword: this.rePassword,
+        email: this.email
+      }
+      let res = await signData('/apis/users/signup', data)
+      console.log(res)
+      console.log('send data:' + JSON.stringify(data))
+      // if (res.status !== 200) {
+      //   console.log('fail')
+      // } else {
+      //   console.log('success')
+      // }
     }
   }
 }

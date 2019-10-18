@@ -2,12 +2,12 @@
 //     baseUrl
 // } from './env'
 const axios = require('axios')
-const config = require('../config/env')
+// const config = require('../config/env')
 
 export const getRequest = (url, params) => {
     return axios({
         method: 'get',
-        url: config.baseUrl + url,
+        url: url,
         params: params,
         headers: {
             'Content-type': 'application/x-www-form-urlencoded'
@@ -18,7 +18,7 @@ export const getRequest = (url, params) => {
 export const postRequest = (url, params) => {
     return axios({
         method: 'post',
-        url: config.baseUrl + url,
+        url: url,
         data: params,
         // transformRequest: [function (data) {
         //   let ret = '';

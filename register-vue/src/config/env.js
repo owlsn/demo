@@ -1,15 +1,15 @@
 // 环境配置
 // 根域名
-let baseUrl = 'http://127.0.0.1:3000'
+let baseUrl = 'http://localhost:8080'
 // 图片服务器域名
-let imgBaseUrl = 'http://127.0.0.1:3000'
+let imgBaseUrl = 'http://localhost:8080'
 
 if (process.env.NODE_ENV === 'development') {
-    baseUrl = 'http://127.0.0.1:3000/'
-    imgBaseUrl = 'http://127.0.0.1:3000/'
+    baseUrl = 'http://localhost:8080'
+    imgBaseUrl = 'http://localhost:8080'
 } else if (process.env.NODE_ENV === 'production') {
-    baseUrl = 'http://127.0.0.1:3000/'
-    imgBaseUrl = 'http://127.0.0.1:3000/'
+    baseUrl = 'http://localhost:8080'
+    imgBaseUrl = 'http://localhost:8080'
 }
 
 // let axiosConfig = {
