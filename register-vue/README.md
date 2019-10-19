@@ -1,30 +1,8 @@
-# register-vue
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 10.16
+vue init wepack register-vue 脚手架创建项目
+# 10.17
+调整本地调试服务器框架，将默认的webpack-dev-server 改为koa,并且修改相应的配置代码
+# 10.18
+调试页面，解决axios本地调试异步访问接口跨域问题
+# 10.19
+完善login页面功能
