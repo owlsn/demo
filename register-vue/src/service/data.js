@@ -19,3 +19,11 @@ export const userInfo = (userId) => {
     }
     return postRequest('/apis/users/info', data)
 }
+
+export const login = (name, password, from) => {
+    return postRequest('apis/users/login', {name : name, password: password, from: from})
+}
+
+export const verifyCode = () => {
+    return postRequest('apis/users/verify_code')
+}

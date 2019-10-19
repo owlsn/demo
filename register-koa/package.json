@@ -7,7 +7,7 @@
   "author": "owlsn <helloworld.zouhao@gmail.com>",
   "private": true,
   "scripts": {
-    "dev":"node run.js"
+    "dev": "node run.js"
   },
   "dependencies": {
     "koa": "^2.10.0",
@@ -16,6 +16,7 @@
     "koa-logger": "^3.2.1",
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
     "vue": "^2.6.10"
   },
   "browserslist": [
