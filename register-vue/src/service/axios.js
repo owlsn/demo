@@ -2,6 +2,7 @@
 //     baseUrl
 // } from './env'
 const axios = require('axios')
+axios.defaults.withCredentials = true
 // const config = require('../config/env')
 
 export const getRequest = (url, params) => {

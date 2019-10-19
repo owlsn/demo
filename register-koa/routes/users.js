@@ -27,21 +27,23 @@ router.get('/get_json', async (ctx, next) => {
     ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/list.json'));
 });
 
+router.post('*', async (ctx, next) => {
+    // ctx.response.type = 'application/json';
+    await next()
+})
+
 router.post('/list', async (ctx, next) => {
-    ctx.response.type = 'application/json';
     ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/list.json'));
 });
 
 router.post('/info', async (ctx, next) => {
-    ctx.response.type = 'application/json';
     ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/user.json'));
 });
 
 router.post('/signup', async (ctx, next) => {
-    ctx.response.type = 'application/json';
     var ret = {
-        status : -1,
-        info : ''
+        status: -1,
+        info: ''
     }
     var data = ctx.request.body
     console.log(data)
@@ -49,15 +51,20 @@ router.post('/signup', async (ctx, next) => {
         password = data.password,
         rePassword = data.rePassword,
         email = data.email;
-    if(password !== rePassword){
+    if (password !== rePassword) {
         ret.info = 'password is not match rePassword'
     }
-    else{
+    else {
         ret.status = 200
         ret.info = 'success'
     }
     ctx.body = ret
     // ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/user.json'));
 })
+
+router.post('/user_info', async (ctx, next) => {
+    console.log(path.resolve(__dirname, '..') + '/public/file/user.json')
+    ctx.body = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..') + '/public/file/user.json'));
+});
 
 module.exports = router;

@@ -35,26 +35,31 @@
 </template>
 
 <script>
-import { getList, getJson, signData } from '../service/data'
+import { userInfo, getJson, signData } from '../service/data'
 export default {
   name: 'Signup',
   data() {
     return {
+      userId: null,
       phone: null,
       password: null,
       rePassword: null,
       email: null
     }
   },
+  // html加载后执行方法
+  mounted() {
+    this.initData()
+  },
   methods: {
-    async fill() {
-      let data = await getList()
-      console.log(data)
+    async initData() {
+      let res = await userInfo(this.userId)
+      console.log(res.data)
     },
     async sign() {
       let data = { phone: this.phone, email: this.email }
       let res = await getJson(data)
-      console.log(res)
+      console.log(res.data)
     },
     async signup() {
       var data = {
@@ -64,7 +69,7 @@ export default {
         email: this.email
       }
       let res = await signData('/apis/users/signup', data)
-      console.log(res)
+      console.log(res.data)
       console.log('send data:' + JSON.stringify(data))
       // if (res.status !== 200) {
       //   console.log('fail')

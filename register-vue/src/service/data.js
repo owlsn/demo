@@ -11,3 +11,11 @@ export const getJson = (data) => {
 export const signData = (url, data) => {
     return postRequest(url, data)
 }
+
+export const userInfo = (userId) => {
+    let id = userId
+    var data = {
+        'userId' : userId
+    }
+    return postRequest('/apis/users/info', data)
+}
