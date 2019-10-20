@@ -6,3 +6,5 @@ vue init wepack register-vue 脚手架创建项目
 调试页面，解决axios本地调试异步访问接口跨域问题
 # 10.19
 完善login页面功能
+# 10.20
+调试页面样式

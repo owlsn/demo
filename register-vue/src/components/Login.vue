@@ -1,21 +1,21 @@
 <template>
-    <form role="form">
-        <div class="form-group">
-            <label for="name">名称</label>
-            <input type="text" class="form-control" id="name" placeholder="请输入名称">
-        </div>
-        <div class="form-group">
-            <label for="inputfile">文件输入</label>
-            <input type="file" id="inputfile">
-            <p class="help-block">这里是块级帮助文本的实例。</p>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox">请打勾
-            </label>
-        </div>
-        <button type="submit" @click="login" class="btn btn-default">提交</button>
-    </form>
+  <form role="form">
+    <div class="form-group">
+      <label for="name">名称</label>
+      <input type="text" class="form-control" id="name" placeholder="请输入名称">
+    </div>
+    <div class="form-group">
+      <label for="inputfile">文件输入</label>
+      <input type="file" id="inputfile">
+      <p class="help-block">这里是块级帮助文本的实例。</p>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox">请打勾
+      </label>
+    </div>
+    <button type="submit" @click="login" class="btn btn-default">提交</button>
+  </form>
 </template>
 
 <script>
@@ -53,5 +53,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import '../styles/common.css';
+$color: gray;
+form {
+  background-color: $color;
+}
 </style>
