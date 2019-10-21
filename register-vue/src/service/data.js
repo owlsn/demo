@@ -1,4 +1,4 @@
-import {getRequest, postRequest} from './axios'
+import { getRequest, postRequest } from './axios'
 
 export const getList = () => {
     return getRequest('/apis/users/get_json')
@@ -15,13 +15,13 @@ export const signData = (url, data) => {
 export const userInfo = (userId) => {
     let id = userId
     var data = {
-        'userId' : userId
+        'userId': userId
     }
     return postRequest('/apis/users/info', data)
 }
 
-export const login = (name, password, from) => {
-    return postRequest('apis/users/login', {name : name, password: password, from: from})
+export const login = (name, password, from, code) => {
+    return postRequest('apis/users/login', { name: name, password: password, from: from, code: code })
 }
 
 export const verifyCode = () => {

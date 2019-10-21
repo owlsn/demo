@@ -8,3 +8,5 @@ vue init wepack register-vue 脚手架创建项目
 完善login页面功能
 # 10.20
 调试页面样式
+# 10.21
+增加图片验证码
