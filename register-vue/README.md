@@ -10,3 +10,5 @@ vue init wepack register-vue 脚手架创建项目
 调试页面样式
 # 10.21
 增加图片验证码
+# 10.22
+编写jest测试样例
