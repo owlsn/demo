@@ -1,5 +1,5 @@
 <template>
-  <form role="form">
+  <form class="login_form" role="form">
     <div class="form-group">
       <label for="name">用户名:</label>
       <input type="text" class="form-control" v-model="name" id="name" placeholder="请输入名称">
@@ -16,7 +16,7 @@
     <section class="input_container captcha_code_container">
       <input type="text" placeholder="验证码" name="code" v-model="code" id="code" maxlength="4">
       <div class="img_change_img">
-        <div v-html="svgData"></div>
+        <div class="svgData" v-html="svgData"></div>
         <div class="change_img" @click="getCaptchaCode">
           <p>看不清</p>
           <p>换一张</p>
@@ -28,13 +28,12 @@
         <input type="checkbox">请打勾
       </label>
     </div>
-    <input type="button" value="提交" @click="login" class="btn btn-default"/>
+    <input type="button" value="提交" @click="login" class="btn btn-default" />
   </form>
 </template>
 
 <script>
 import { login, verifyCode } from '../service/data'
-
 export default {
   name: 'Login',
   data() {
@@ -64,7 +63,7 @@ export default {
     async fillCode() {
       let ret = await verifyCode()
       this.svgData = ret.data.svg
-      console.log(ret.data)
+      console.log(Object.keys(ret))
     },
     getCaptchaCode() {
       this.fillCode()

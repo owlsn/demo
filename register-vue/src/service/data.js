@@ -1,4 +1,4 @@
-import { getRequest, postRequest } from './axios'
+import { getRequest, postRequest } from './axiosRequest'
 
 export const getList = () => {
     return getRequest('/apis/users/get_json')
