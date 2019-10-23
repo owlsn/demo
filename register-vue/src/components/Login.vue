@@ -1,35 +1,32 @@
 <template>
-  <form class="login_form" role="form">
-    <div class="form-group">
-      <label for="name">用户名:</label>
-      <input type="text" class="form-control" v-model="name" id="name" placeholder="请输入名称">
-    </div>
-    <div class="form-group">
-      <label for="name">密码:</label>
-      <input type="text" class="form-control" v-model="password" id="password" placeholder="请输入名称">
-    </div>
-    <!-- <div class="form-group">
-      <label for="inputfile">文件输入</label>
-      <input type="file" id="inputfile">
-      <p class="help-block">这里是块级帮助文本的实例。</p>
-    </div> -->
-    <section class="input_container captcha_code_container">
-      <input type="text" placeholder="验证码" name="code" v-model="code" id="code" maxlength="4">
-      <div class="img_change_img">
-        <div class="svgData" v-html="svgData"></div>
-        <div class="change_img" @click="getCaptchaCode">
-          <p>看不清</p>
-          <p>换一张</p>
+  <div class="login-10">
+    <div class="tenth-login">
+      <h4>LOGIN FORM</h4>
+      <form class="ten login_form">
+        <div class="fb">
+          <a href="#">
+            <span> </span>
+            <label>Sign in with Facebook</label>
+            <div class="clear"></div>
+          </a>
         </div>
-      </div>
-    </section>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox">请打勾
-      </label>
+        <p>Or</p>
+        <p>
+        </p>
+        <li class="cream">
+          <input type="text" class="text" value="Username" id="name" v-model="name">
+          <a href="#" class=" icon10 user10"></a>
+        </li>
+        <li class="cream">
+          <input type="password" value="Password" id="password" v-model="password">
+          <a href="#" class=" icon10 lock10"></a>
+        </li>
+        <div class="submit-ten">
+          <input type="button" @click="login" value="Log in">
+        </div>
+      </form>
     </div>
-    <input type="button" value="提交" @click="login" class="btn btn-default" />
-  </form>
+  </div>
 </template>
 
 <script>
@@ -52,7 +49,7 @@ export default {
     })
   },
   mounted() {
-    this.fillCode()
+    // this.fillCode()
   },
   methods: {
     async login() {
@@ -73,9 +70,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../styles/common.css';
-$color: gray;
-form {
-  background-color: $color;
-}
+@import '../styles/login.scss';
 </style>

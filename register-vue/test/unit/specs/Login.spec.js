@@ -19,7 +19,6 @@ describe('Login.vue', () => {
     expect(wrapper.find('.login_form').exists()).toBe(true)
     expect(wrapper.find('input[id=name]').exists()).toBe(true)
     expect(wrapper.find('input[id=password]').exists()).toBe(true)
-    expect(wrapper.find('input[id=code]').exists()).toBe(true)
   })
 
   // it('test login api', () => {
@@ -33,12 +32,12 @@ describe('Login.vue', () => {
   //   })
   // })
 
-  it('test click verify code fn', async () => {
-    // await wrapper.find('.change_img').trigger('click')
-    expect(verifyCode).toHaveBeenCalled()
-    expect(verifyCode).toHaveBeenCalledTimes(1)
-    expect(wrapper.find('.svgData').contains('svg')).not.toBeNull()
-  })
+  // it('test click verify code fn', async () => {
+  //   // await wrapper.find('.change_img').trigger('click')
+  //   expect(verifyCode).toHaveBeenCalled()
+  //   expect(verifyCode).toHaveBeenCalledTimes(1)
+  //   expect(wrapper.find('.svgData').contains('svg')).not.toBeNull()
+  // })
 
   // it('test verify code api', () => {
   //   const url = 'http://127.0.0.1:3000/users/verify_code'
