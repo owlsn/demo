@@ -12,3 +12,5 @@ vue init wepack register-vue 脚手架创建项目
 增加图片验证码
 # 10.22
 编写jest测试样例
+# 10.23
+登录界面仿facebook样式

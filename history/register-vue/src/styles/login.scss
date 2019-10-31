@@ -8,7 +8,7 @@ $iconimg: '#{$src_path}/assets/icon10.png';
   padding: 6em 0;
 }
 
-.tenth-login {
+.login {
   background: #f6f8f7;
   text-align: center;
   border-radius: 0.4em;
@@ -19,7 +19,7 @@ $iconimg: '#{$src_path}/assets/icon10.png';
   margin: 0 auto;
 }
 
-.tenth-login h4 {
+.login h4 {
   font-size: 1.2em;
   color: #646464;
   font-family: 'PT Sans', sans-serif;
@@ -126,8 +126,8 @@ form.ten li.cream {
   margin: 9px auto;
 }
 
-.tenth-login input[type="text"],
-.tenth-login input[type="password"] {
+.login input[type="text"],
+.login input[type="password"] {
   width: 74%;
   padding: 0.8em 0.7em 1em 1em;
   color: #8f9091;
@@ -145,7 +145,7 @@ form.ten li.cream {
   margin-top: 0.8em;
 }
 
-.tenth-login input[type="submit"] {
+.login input[type="button"] {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
@@ -165,7 +165,7 @@ form.ten li.cream {
 
 }
 
-.tenth-login input[type="submit"]:hover {
+.login input[type="button"]:hover {
   background: #3b5998;
 }
 
@@ -218,28 +218,28 @@ background:#627EAB;
     }
 }
 @media (max-width:1024px) {
-  .tenth-login {
+  .login {
     width: 38%;
     margin: 0 auto;
   }
 }
 
 @media (max-width:768px) {
-  .tenth-login {
+  .login {
     width: 50%;
     margin: 0 auto;
   }
 }
 
 @media (max-width:640px) {
-  .tenth-login {
+  .login {
     width: 67%;
     margin: 0 auto;
   }
 }
 
 @media (max-width:480px) {
-  .tenth-login {
+  .login {
     width: 85%;
     margin: 0 auto;
   }
@@ -250,12 +250,12 @@ background:#627EAB;
 }
 
 @media (max-width:320px) {
-  .tenth-login {
+  .login {
     width: 92%;
     margin: 0 auto;
   }
 
-  .tenth-login h4 {
+  .login h4 {
     font-size: 1.2em;
     padding: 1em 0em;
   }
@@ -266,14 +266,14 @@ background:#627EAB;
     padding: 10px 10px;
     }
 
-  .tenth-login input[type="text"],
-  .tenth-login input[type="password"] {
+  .login input[type="text"],
+  .login input[type="password"] {
     width: 60%;
     padding: 0.7em 0.6em;
     font-size: 16px;
   }
 
-  .tenth-login input[type="submit"] {
+  .login input[type="button"] {
     font-size: 17px;
     padding: 0.6em 0em;
     width: 80%;

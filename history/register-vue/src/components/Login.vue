@@ -1,6 +1,6 @@
 <template>
   <div class="login-10">
-    <div class="tenth-login">
+    <div class="login">
       <h4>LOGIN FORM</h4>
       <form class="ten login_form">
         <div class="fb">
